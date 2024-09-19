@@ -47,7 +47,12 @@ pip install -r requirements.txt
 ```
 
 ### 3. Setup the Dataset
-Place your dataset (CSV and images) in the `data/` folder. Ensure that the `artifact.csv` file is properly formatted with the correct metadata (e.g., artifact name, description, etc.).
+
+You can download the dataset from the following Google Drive link:
+
+[Download Dataset from Google Drive](https://drive.google.com/drive/folders/1-8Q1RO06Cyu9AuC-7587nMlnSZXz8uNv?usp=sharing)
+
+Once downloaded, place the dataset (CSV and images) in the `data/` folder. Ensure that the `artifact.csv` file is properly formatted with the correct metadata (e.g., artifact name, description, etc.).
 
 ### 4. Running the Application Locally
 
