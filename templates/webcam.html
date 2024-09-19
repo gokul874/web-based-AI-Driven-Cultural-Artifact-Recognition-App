@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Capture - Indian Culture and Heritage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Webcam Capture Section -->
+    <section class="webcam" id="webcam">
+        <header>
+            <a href="/" class="logo">INDIAN CULTURE AND HERITAGE</a>
+        </header>
+        <div class="heading">
+            <h2>Use Webcam to Detect Heritage or Culture</h2>
+            <p>Capture and analyze artifacts with your webcam.</p>
+        </div>
+        <div class="webcam-box">
+            <video id="webcamVideo" width="540" height="380" autoplay></video>
+            <button class="btn" id="captureButton">Capture Image</button>
+            <button class="btn" id="turnOffButton">Turn Off Camera</button>
+        </div>
+        <div id="webcamResult" class="result">
+            <!-- The recognized details will be displayed here -->
+        </div>
+        <div id="notes" class="notes">
+            <!-- The notes/details about the captured image will be displayed here -->
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // JavaScript code for webcam access and image capture
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('webcamVideo');
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            const captureButton = document.getElementById('captureButton');
+            const turnOffButton = document.getElementById('turnOffButton');
+            const webcamResult = document.getElementById('webcamResult');
+            const notes = document.getElementById('notes');
+            let isCameraActive = false;
+            let stream = null;
+
+            // Function to start the webcam
+            function startWebcam() {
+                if (!isCameraActive) {
+                    navigator.mediaDevices.getUserMedia({ video: true })
+                        .then(mediaStream => {
+                            video.srcObject = mediaStream;
+                            video.play();
+                            isCameraActive = true;
+                            stream = mediaStream;
+                        })
+                        .catch(err => {
+                            console.error('Error accessing webcam: ', err);
+                        });
+                }
+            }
+
+            // Function to capture an image
+            function captureImage() {
+                if (!isCameraActive) {
+                    startWebcam();
+                    setTimeout(() => {
+                        captureAndSendImage();
+                    }, 500);
+                } else {
+                    captureAndSendImage();
+                }
+            }
+
+            // Function to capture the image and send for recognition
+            function captureAndSendImage() {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                canvas.toBlob(function(blob) {
+                    const formData = new FormData();
+                    formData.append('image', blob, 'webcam_capture.png');
+
+                    document.getElementById('webcamResult').innerHTML = 'Processing...';
+
+                    fetch('http://127.0.0.1:8000/api/upload/', { // Backend URL for image upload and recognition
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('webcamResult').innerHTML = `
+                            <h3>Recognized Heritage/Cultural Artifact</h3>
+                            <p>${data.predicted_class}</p>
+                        `;
+                        notes.innerHTML = `
+                            <h3>Notes</h3>
+                            <p>${data.notes}</p>
+                        `;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        document.getElementById('webcamResult').innerHTML = 'An error occurred while processing the image.';
+                    });
+                }, 'image/png');
+            }
+
+            // Function to turn off the camera
+            function turnOffCamera() {
+                if (isCameraActive && stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                    video.srcObject = null;
+                    isCameraActive = false;
+                    stream = null;
+                }
+            }
+
+            captureButton.addEventListener('click', captureImage);
+            turnOffButton.addEventListener('click', turnOffCamera);
+        });
+    </script>
+</body>
+</html>

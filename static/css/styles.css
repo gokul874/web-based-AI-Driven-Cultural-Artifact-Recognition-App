@@ -1,0 +1,793 @@
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial;
+    transition: all .5s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 100px;
+}
+
+.banner {
+    position: relative;
+    min-height: 100vh;
+    background: url('../image/bgg4.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 65px;
+}
+
+
+.banner h2 {
+    font-size: 3em;
+    color: rgb(63, 106, 245);
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.banner h2 span {
+    font-size: 1.5em;
+    color: chartreuse;
+    font-family: 'Akronim', cursive;
+}
+
+.banner h3 {
+    font-size: 1.5em;
+    color: rgb(63, 106, 245);
+    font-weight: 500;
+}
+
+.btn {
+    position: relative;
+    background-color: none;
+    display: inline-block;
+    border: 3px solid rgb(39, 255, 1);
+    color: rgb(39, 255, 1);
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: chartreuse;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Akronim', cursive;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    position: relative;
+}
+
+header ul li a {
+    color: rgb(63, 106, 245);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px;
+}
+
+header ul li a:hover {
+    color: chartreuse;
+    font-weight: bolder;
+}
+
+header.sticky ul li a:hover {
+    color: chartreuse;
+}
+
+header.sticky {
+    background: #fff;
+    padding: 20px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header.sticky .logo {
+    color: chartreuse;
+    font-family: 'Akronim', cursive;
+}
+
+header.sticky ul li a {
+    color: #000;
+}
+
+.color {
+    color: rgb(0, 255, 42);
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.heading h2 {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.about h2 {
+    color: chartreuse;
+}
+
+.about .content p {
+    font-weight: 200;
+}
+
+.about .content p strong {
+    font-style: italic;
+    font-weight: 500;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentBx {
+    padding-right: 30px;
+}
+
+.contentBx h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.w50 {
+    max-width: 50%;
+}
+
+img {
+    max-width: 100%;
+}
+.state-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.state-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.state-btn:hover {
+    background-color: #1558b6;
+}
+
+.services {
+    background-color: #111;
+}
+
+.heading.white {
+    color: #fff;
+}
+
+.services .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.services .content .servicesBx {
+    padding: 40px 20px;
+    background: #222;
+    color: #fff;
+    max-width: 340px;
+    margin: 20px;
+    text-align: center;
+}
+
+.services .content .servicesBx:hover {
+    background-color: chartreuse;
+    cursor: pointer;
+}
+
+.services .content .servicesBx img {
+    max-width: 80px;
+}
+
+.servicesBx:hover .color {
+    color: #8e8585;
+}
+
+.services .content .servicesBx h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.services .content .servicesBx p {
+    color: #999;
+}
+
+.services .content .servicesBx:hover p {
+    color: #f7f7f7;
+}
+
+.work .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btn:hover {
+    border: 2px solid rgb(39, 255, 1);
+    background-color: rgb(39, 255, 1);
+    color: #fff;
+}
+
+.work .btn {
+    color: #2d3;
+}
+
+.work .btn:hover {
+    color: #fff;
+}
+
+.work .content .workBx {
+    width: 50%;
+    padding: 20px;
+}
+
+.work .content .workBx img {
+    max-width: 100%;
+}
+
+.contact {
+    background-color: #111;
+}
+
+
+.main-content {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 30px;
+}
+
+.heading h2 {
+    font-size: 28px;
+    color: #007bff;
+}
+
+.heading p {
+    font-size: 16px;
+    color: #555;
+}
+/* General styles for the upload section */
+.upload {
+    padding: 50px 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.upload .heading {
+    margin-bottom: 20px;
+}
+
+.upload .heading h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.upload .heading p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Upload Box styling */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Styling for the default images that can be dragged */
+.default-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.default-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Drop area styling */
+.drop-area {
+    position: relative;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.drop-area p {
+    margin: 0;
+    color: #555;
+}
+
+.drop-area input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Highlight effect when dragging over the drop area */
+.drop-area.dragover {
+    border-color: #333;
+    background-color: #eaeaea;
+}
+
+/* Button styling */
+.upload-box .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-box .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Result section styling */
+.result {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: left;
+    max-width: 80%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.result h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.result p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* AR Buttons */
+.main-content .ar-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.main-content .ar-buttons button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.main-content .ar-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* 3D Hover Effect */
+.ar-buttons button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 3px #004494, 0 7px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Active Button Press Effect */
+.ar-buttons button:active {
+    box-shadow: 0 1px #003b7a, 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+/* 3D Styled Upload Section */
+.upload {
+    padding: 60px 20px;
+    background: #f7faf6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+}
+
+.upload h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#uploadInput {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#uploadInput:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-color: rgb(39, 255, 1);
+}
+
+button.btn {
+    padding: 12px 24px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #218838;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button.btn:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+button.btn:hover {
+    background: #218838;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Webcam Section Styles */
+.webcam {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.webcam .heading {
+    margin-bottom: 30px;
+}
+
+.webcam h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: chartreuse;
+    margin-bottom: 15px;
+}
+
+.webcam p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.webcam-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#webcamVideo {
+    border: 4px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.btn {
+    padding: 12px 24px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #0056b3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+button.btn:hover {
+    background: #0056b3;
+}
+
+button.btn:active {
+    background: #003d7a;
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+#webcamResult {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+/* Note Section */
+.note-section {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-section textarea {
+    width: 100%;
+    max-width: 540px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.note-section button {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 60px 20px;
+    background: #111; /* Dark background to match the theme */
+    color: #fff; /* White text for contrast */
+    text-align: center; /* Center align content */
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.contact .heading {
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.contact h2 {
+    font-size: 32px; /* Main heading size */
+    font-weight: 700; /* Bold heading */
+    color: chartreuse; /* Highlighted heading color */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.contact p {
+    font-size: 16px; /* Standard text size */
+    color: #ccc; /* Lighter text color for contrast */
+    margin-top: 5px; /* Slight spacing above the text */
+}
+
+.contact p a {
+    color: #4caf50; /* Accent color for the email link */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Slightly bold for emphasis */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.contact p a:hover {
+    color: chartreuse; /* Highlight on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+/* Responsive Behaviour */
+@media (max-width: 1190px) {
+    header,
+    header.sticky {
+        padding: 20px 50px;
+        z-index: 1000;
+    }
+
+    .menu {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        display: block;
+        padding: 100px 20px;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 999;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        transition: left 0.3s ease;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .w50 {
+        max-width: 100%;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .banner {
+        padding: 100px 50px;
+    }
+
+    .contentBx {
+        margin: 1rem 0;
+        padding-right: 0;
+    }
+
+    .about {
+        padding: 100px 20px;
+    }
+
+    .services {
+        padding: 100px 30px;
+    }
+
+    .work {
+        padding: 100px 30px;
+    }
+
+    .work .content .workBx {
+        width: 100%;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .contact h2 {
+        font-size: 21px;
+        margin-bottom: 1rem;
+    }
+
+    .contact {
+        padding: 100px 20px;
+    }
+
+    .contact form h3 {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .contact p {
+        margin-bottom: 1rem;
+    }
+
+    header ul li a {
+        color: #111;
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .toggle {
+        width: 40px;
+        height: 40px;
+        background: url('menu.png') no-repeat center;
+        background-size: 30px;
+        cursor: pointer;
+    }
+
+    .toggle.active {
+        background: url('close.png') no-repeat center;
+        background-size: 25px;
+    }
+
+    header.sticky .toggle {
+        filter: invert(1);
+    }
+}
+
+@media (max-width: 440px) {
+    footer .sec {
+        margin-top: 1rem;
+    }
+
+    .sec.aboutus {
+        margin-bottom: 3em;
+    }
+
+    .sec p,
+    .sec h2 {
+        width: 200px;
+        align-items: justify;
+    }
+}

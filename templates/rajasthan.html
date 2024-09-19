@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan - Heritage and Culture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!-- Corrected CSS link -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}"> <!-- Corrected favicon path -->
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">INDIAN CULTURE AND HERITAGE</a> <!-- Updated link to home -->
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Home</a></li> <!-- Corrected Home button link -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#culture">Culture</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="state-heritage">
+        <div class="heading">
+            <h2>Rajasthan - The Land of Kings</h2>
+            <p>Explore the rich heritage, palaces, and vibrant culture of Rajasthan.</p>
+        </div>
+        <div class="content">
+            <div class="heritage-item">
+                <img src="{{ url_for('static', filename='image/rajasthan-palace.jpg') }}" alt="Rajasthan Palace"> <!-- Corrected image path -->
+                <h3>Chittorgarh Fort</h3>
+                <p>Chittorgarh Fort, located in Rajasthan, India, is one of the largest and most historically significant forts in the country. It stands atop a 180-meter-high hill and covers an area of about 700 acres. The fort dates back to the 7th century CE and has been a site of several significant historical events, including battles and sieges...</p>
+            </div>
+            <div class="heritage-item">
+                <img src="{{ url_for('static', filename='image/amber-fort.jpg') }}" alt="Rajasthan Fort"> <!-- Corrected image path -->
+                <h3>Amber Fort</h3>
+                <p>Amber Fort, also known as Amer Fort, is a historic fort located in Amber, Rajasthan, India. Built in the 16th century by Raja Man Singh I, the fort is renowned for its stunning Hindu-Rajput architecture and its intricate decorative elements...</p>
+            </div>
+            <!-- Add more heritage items as needed -->
+        </div>
+        <div class="back-button">
+            <button onclick="window.location.href='index.html#heritage'">Back to Heritage</button> <!-- Updated Back button link -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Indian Culture and Heritage. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const toggle = document.querySelector('.toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Culture and Heritage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">INDIAN CULTURE AND HERITAGE</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#culture">Culture</a></li>
+            <li><a href="#AR">AR</a></li>
+            <li><a href="#upload">Upload Photo</a></li>
+            <li><a href="/webcam">Webcam</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Welcome To <span>Incredible!ndia</span></h2>
+            <h3>Oldest civilizations in the world</h3>
+            <a href="#about" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About India</h2>
+        </div>
+        <div class="content">
+            <div class="contentBx w50">
+                <h3>Why is India <color>Oldest Civilization</color>?</h3>
+                <p>According to research, <strong>"India's history and culture is dynamic, spanning back to the beginning of human civilization.
+                The history of India is punctuated by constant integration of migrating people with the diverse cultures that surround India.
+                By the end of the fourth millennium BC, India had emerged as a region of highly developed civilization."</strong></p>
+            </div>
+            <div>
+                <p>India is one of the oldest civilizations in the world with a kaleidoscopic variety and rich cultural heritage.
+                It has achieved all-around socio-economic progress during the last 65 years of its Independence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="services" id="heritage">
+        <div class="heading white">
+            <h2>Indian Heritage</h2>
+            <p>Explore heritage destinations across various states of India.</p>
+        </div>
+        <div class="content">
+            <div class="state-buttons">
+                <button class="state-btn" onclick="window.location.href='/rajasthan'">Rajasthan</button>
+                <button class="state-btn" onclick="window.location.href='/uttar_pradesh'">Uttar Pradesh</button>
+                <button class="state-btn" onclick="window.location.href='/tamil_nadu'">Tamil Nadu</button>
+                <button class="state-btn" onclick="window.location.href='/maharashtra'">Maharashtra</button>
+                <button class="state-btn" onclick="window.location.href='/andhra_pradesh'">Andhra Pradesh</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="work" id="culture">
+        <div class="heading">
+            <h2>Colours Of Culture</h2>
+            <p>From splendid paintings to beautiful wood crafts and textiles, India resounds with a rich and unique culture.</p>
+        </div>
+        <div class="content">
+            <div data-aos="flip-right" class="workBx">
+                <p>The Indian culinary repertoire reflects the cultural diversity of the country. The term “Indian food” denotes a mélange of flavors from different parts of the country and showcases centuries of cultural exchange with the far corners of the world.</p>
+            </div>
+            <div data-aos="flip-left" class="workBx">
+                <p>The most important classical traditions of music in India are the Hindustani classical tradition which finds a home in the northern and western parts of the country and the Carnatic classical tradition, which is practiced primarily in the southern parts of the country.</p>
+            </div>
+            <div data-aos="flip-right" class="workBx">
+                <p>Considered to be the oldest dance and an inspiration to all other styles, Bharat Natyam, a temple dance of Tamil Nadu, is an enchanting performance that relates scenes from religious texts and myths in a series of quick and complicated neat motions.</p>
+            </div>
+            <div data-aos="flip-left" data-aos-offset="100" class="workBx">
+                <p>Festivals in India are a vibrant representation of the culture and ancient traditions of the country. The most prominent celebration is that of Diwali, popularly called the festival of lights. Like most festivals in the country, its story is rooted in myths, legends, and religion.</p>
+            </div>
+        </div>
+        <div class="heading white">
+            <a href="https://indianculture.gov.in/" target="#" class="btn">View More</a>
+        </div>
+    </section>
+
+    <!-- AR Section -->
+    <section class="main-content" id="AR">
+        <div class="heading">
+            <h2>Explore Indian Heritage in Augmented Reality</h2>
+            <p>Select a site to view in Augmented Reality.</p>
+        </div>
+        <div class="ar-buttons">
+            <button onclick="location.href='{{ url_for('ar_page') }}#thanjavur';">Explore</button>
+        </div>
+    </section>
+
+    <!-- Upload Section for Image Recognition -->
+    <!-- Upload Section for Image Recognition -->
+<section class="upload" id="upload">
+    <div class="heading">
+        <h2>Upload a Photo of Heritage or Cultural Artifact</h2>
+        <p>Upload a photo to identify and learn more about Indian heritage and culture.</p>
+    </div>
+    <div class="upload-box">
+        <div class="default-images">
+            <!-- Default Images for Drag and Drop -->
+            <img src="{{ url_for('static', filename='image/default1.png') }}" alt="Default Image 1" class="default-img" draggable="true" ondragstart="drag(event)">
+            <img src="{{ url_for('static', filename='image/default2.png') }}" alt="Default Image 2" class="default-img" draggable="true" ondragstart="drag(event)">
+            <img src="{{ url_for('static', filename='image/default3.png') }}" alt="Default Image 3" class="default-img" draggable="true" ondragstart="drag(event)">
+            <img src="{{ url_for('static', filename='image/default4.jpeg') }}" alt="Default Image 4" class="default-img" draggable="true" ondragstart="drag(event)">
+            <img src="{{ url_for('static', filename='image/default5.png') }}" alt="Default Image 5" class="default-img" draggable="true" ondragstart="drag(event)">
+        </div>
+
+        <!-- Combined Drag and Drop & File Input Area -->
+        <div class="drop-area" id="dropZone">
+            <input type="file" id="uploadInput" accept="image/*" onchange="handleFileSelect(event)">
+            <p>Drag and drop an image here, or click to choose a file.</p>
+        </div>
+        <button class="btn" onclick="uploadImage()">Upload & Recognize</button>
+    </div>
+
+    <div id="result" class="result">
+        <!-- The recognized details will be displayed here -->
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="heading white">
+            <h2>SIH project</h2>
+            <p><a href="mailto:gokulnps2004@gmail.com">gokulnps2004@gmail.com</a></p>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        document.addEventListener('DOMContentLoaded', function () {
+    const dropZone = document.getElementById('dropZone');
+    const uploadInput = document.getElementById('uploadInput');
+
+    // Drag Over event
+    dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    // Drag Leave event
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    // Drop event
+    dropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dropZone.classList.remove('dragover');
+        const files = event.dataTransfer.files;
+        handleFiles(files);
+    });
+
+    // Function to handle selected or dropped files
+    function handleFiles(files) {
+        if (files.length > 0) {
+            uploadInput.files = files; // Update input files for uploadImage function
+            document.querySelector('.drop-area p').innerText = 'Image selected: ' + files[0].name;
+        }
+    }
+
+    // Function to handle file selection from the file input
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        if (file) {
+            handleFiles(event.target.files);
+        }
+    }
+
+    // Function to handle image upload and recognition
+    window.uploadImage = function () {
+        if (uploadInput.files.length === 0) {
+            alert('Please select an image to upload.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('image', uploadInput.files[0]);
+
+        document.getElementById('result').innerHTML = 'Processing...';
+
+        fetch('http://127.0.0.1:8000/api/upload/', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('result').innerHTML = 'No matching artifact found.';
+                } else {
+                    document.getElementById('result').innerHTML = `
+                        <h3>Recognized Heritage/Cultural Artifact</h3>
+                        <p><strong>Name:</strong> ${data.predicted_class || 'Unknown'}</p>
+                        <p><strong>Description:</strong> ${data.description}</p>
+                        <p><strong>Historical Significance:</strong> ${data.historical_significance}</p>
+                        <p><strong>Origin:</strong> ${data.origin}</p>
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = 'An error occurred while processing the image.';
+            });
+    };
+});
+
+
+    </script>
+</body>
+</html>

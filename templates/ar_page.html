@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Experience - Indian Heritage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ar_css/style.css') }}"> <!-- Updated CSS link -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('index') }}" class="logo">Back to Main</a><!-- Corrected link to main page -->
+    </header>
+
+    <!-- AR Section -->
+    <section class="ar-section">
+        <div class="heading">
+            <h2>Explore in Augmented Reality</h2>
+            <p>Scan the QR codes to view 3D models of these heritage sites in Augmented Reality.</p>
+        </div>
+        <div class="ar-content">
+            <!-- AR Place 1 - Thanjavur -->
+            <div id="thanjavur" class="ar-place">
+                <img id="thanjavur-image" src="{{ url_for('static', filename='qr/thanjavur.jpeg') }}" alt="Thanjavur" class="ar-image"> <!-- Corrected image ID -->
+                <h3>Thanjavur</h3>
+                <div class="qr-codes">
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/thanjavur_english.jpg') }}" alt="QR Code English" class="qr-code" title="Scan for English">
+                        <p>English</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/thanjavur_hindi.jpg') }}" alt="QR Code Hindi" class="qr-code" title="Scan for Hindi">
+                        <p>Hindi</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/thanjavur_tamil.jpg') }}" alt="QR Code Tamil" class="qr-code" title="Scan for Tamil">
+                        <p>Tamil</p>
+                    </div>
+                </div>
+                <video id="tanjavur-video" style="display: none; width: 100%;" controls>
+                    <source src="{{ url_for('static', filename='videos/tanjavur.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- AR Place 2 - Kailash Temple -->
+            <div id="kailash" class="ar-place">
+                <img src="{{ url_for('static', filename='qr/kailash.jpg') }}" alt="Kailash Temple" class="ar-image"> <!-- Updated image path -->
+                <h3>Kailash Temple</h3>
+                <div class="qr-codes">
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/kai_eng.jpg') }}" alt="QR Code English" class="qr-code" title="Scan for English">
+                        <p>English</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/kai_hindi.jpg') }}" alt="QR Code Hindi" class="qr-code" title="Scan for Hindi">
+                        <p>Hindi</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/kai_tamil.jpg') }}" alt="QR Code Tamil" class="qr-code" title="Scan for Tamil">
+                        <p>Tamil</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AR Place 3 - Qutub Minar -->
+            <div id="qutub" class="ar-place">
+                <img src="{{ url_for('static', filename='qr/qutub.jpeg') }}" alt="Qutub Minar" class="ar-image"> <!-- Updated image path -->
+                <h3>Qutub Minar</h3>
+                <div class="qr-codes">
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/qutub_eng.jpg') }}" alt="QR Code English" class="qr-code" title="Scan for English">
+                        <p>English</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/qutub_hin.jpg') }}" alt="QR Code Hindi" class="qr-code" title="Scan for Hindi">
+                        <p>Hindi</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="{{ url_for('static', filename='qr/qutub_tam.jpg') }}" alt="QR Code Tamil" class="qr-code" title="Scan for Tamil">
+                        <p>Tamil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Indian Culture and Heritage</p>
+    </footer>
+
+    <!-- JavaScript to play and toggle video on image click -->
+    <script>
+        // Play or hide video when Thanjavur image is clicked
+        document.getElementById('thanjavur-image').addEventListener('click', function() {
+            var video = document.getElementById('tanjavur-video');
+            if (video.style.display === 'none' || video.paused) {
+                video.style.display = 'block';  // Show the video
+                video.play();  // Play the video
+            } else {
+                video.style.display = 'none';  // Hide the video
+                video.pause();  // Pause the video
+                video.currentTime = 0;  // Reset the video to the beginning
+            }
+        });
+    </script>
+</body>
+</html>

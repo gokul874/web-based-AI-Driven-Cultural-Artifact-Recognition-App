@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttar Pradesh - Heritage and Culture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">INDIAN CULTURE AND HERITAGE</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#culture">Culture</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="state-heritage">
+        <div class="heading">
+            <h2>Uttar Pradesh - The Land of Diversity</h2>
+            <p>Explore the historical monuments, spiritual sites, and rich cultural heritage of Uttar Pradesh.</p>
+        </div>
+        <div class="content">
+            <div class="heritage-item">
+                <img src="{{ url_for('static', filename='image/Taj.jpg') }}" alt="Taj Mahal">
+                <h3>Taj Mahal</h3>
+                <p>The Taj Mahal, an iconic symbol of love, is a stunning white marble mausoleum located in Agra. Built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal, it is one of the Seven Wonders of the World.</p>
+            </div>
+            <div class="heritage-item">
+                <img src="{{ url_for('static', filename='image/Ashoka.jpg') }}" alt="The Lion Capital of Ashoka">
+                <h3>The Lion Capital of Ashoka</h3>
+                <p>The Lion Capital of Ashoka is an iconic sculpture from the 3rd century BCE, originally erected atop a pillar by Emperor Ashoka in Sarnath, Uttar Pradesh, India. The capital is renowned for its four majestic lions, positioned back-to-back, symbolizing power and authority...</p>
+            </div>
+            <div class="heritage-item">
+                <img src="{{ url_for('static', filename='image/Fatehpur Sikri.jpeg') }}" alt="Fatehpur Sikri">
+                <h3>Fatehpur Sikri</h3>
+                <p>Fatehpur Sikri, a UNESCO World Heritage Site, was the capital of the Mughal Empire during the reign of Akbar. The city is renowned for its well-preserved palaces, mosques, and courtyards showcasing Mughal architecture.</p>
+            </div>
+        </div>
+        <div class="back-button">
+            <button onclick="window.location.href='index.html#heritage'">Back to Heritage</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Indian Culture and Heritage. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const toggle = document.querySelector('.toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
